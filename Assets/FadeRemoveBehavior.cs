@@ -23,7 +23,7 @@ public class FadeRemoveBehavior : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timeElapsed += Time.deltaTime;
-        float newAlpha = (1 - (timeElapsed/fadeTime));
+        float newAlpha = startColor.a * (1 - (timeElapsed/fadeTime));
         spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
         if (timeElapsed > fadeTime)
         {
