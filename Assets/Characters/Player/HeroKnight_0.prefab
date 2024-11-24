@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 3984184688075541321}
   - component: {fileID: 2081952089104970727}
   - component: {fileID: 5735183558385280050}
-  m_Layer: 0
+  - component: {fileID: 7490961682789524796}
+  m_Layer: 7
   m_Name: HeroKnight_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 20
   jumpImpulse: 10
+  airWalkSpeed: 3
   _isMoving: 0
   _isFacingRight: 1
 --- !u!114 &2326148329029412345
@@ -329,17 +331,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 64
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
   _isGrounded: 1
+  _isOnWall: 1
+  _isOnCeiling: 1
+--- !u!114 &7490961682789524796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975202492011268349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353a7dd0526656c43814ee5f9730b513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvinsible: 0
+  invincibilityTime: 0.25

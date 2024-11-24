@@ -50,6 +50,14 @@ public class PlayerController : MonoBehaviour
             return animator.GetBool(AnimationStrings.canMove);
         }
     }
+
+    public bool IsAlive
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.isAlive);
+        }
+    }
     [SerializeField]
     private bool _isMoving = false;
 
@@ -97,8 +105,15 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        IsMoving = moveInput != Vector2.zero;
-        SetFacingDirection(moveInput);
+        if (IsAlive)
+        {
+            IsMoving = moveInput != Vector2.zero;
+            SetFacingDirection(moveInput);
+        }
+        else
+        {
+            IsMoving = false;
+        }
     }
 
     private void SetFacingDirection(Vector2 moveInput)
