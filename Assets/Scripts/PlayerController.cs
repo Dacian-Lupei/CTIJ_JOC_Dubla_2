@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float airWalkSpeed = 3f;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
-
+    Damageable damageable;
     Rigidbody2D rb;
     Animator animator;
     
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
     }
     public bool IsMoving
     {
@@ -99,7 +100,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        if(!damageable.LockVelocity)
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -148,4 +151,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
 }
