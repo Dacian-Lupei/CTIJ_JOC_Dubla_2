@@ -67,8 +67,8 @@ public class CharacterManager : MonoBehaviour
         PlayerPrefs.SetInt("selectedOption", selectedOption);
     }
 
-    public void ChangeScene(int sceneID)
+    public void ChangeScene()
     {
-        SceneManager.LoadScene(sceneID);
+        SceneManager.LoadScene("MainScene");
     }
 }

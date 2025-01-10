@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 593449e02168ede43a713eec4a5b6184
+  - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity
     guid: 7118e54196f8a1b40b6abb41ea91c60e
   - enabled: 1
@@ -14,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuitScene.unity
     guid: c9d171c06f8faf64f87b73df508396a3
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: fc787c688c580bc498ec240f584a4d57, type: 3}
