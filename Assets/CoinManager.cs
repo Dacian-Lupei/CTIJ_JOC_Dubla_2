@@ -8,7 +8,7 @@ public class CoinManager : MonoBehaviour
 {
     public int coinCounter;
     public TMP_Text coinText;
-
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class CoinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinText.text = ": " + coinCounter.ToString();
+        coinText.text = ": " + player.GetComponent<PlayerController>().coinCount.ToString();
     }
 
 }

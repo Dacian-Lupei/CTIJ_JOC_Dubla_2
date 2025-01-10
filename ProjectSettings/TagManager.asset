@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Coin
+  - Event
+  - Player1
   layers:
   - Default
   - TransparentFX

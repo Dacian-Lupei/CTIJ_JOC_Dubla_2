@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     public float airWalkSpeed = 3f;
     public CoinManager coinManager;
+    public int coinCount;
 
     Vector2 moveInput;
     TouchingDirections touchingDirections;
@@ -65,6 +66,10 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        //if (CharacterManager.selectedOption == 0)
+        //{
+        //    gameObject.SetActive(false);
+        //}
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
@@ -104,6 +109,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!damageable.LockVelocity)
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        //coinCount = coinManager.coinCounter;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -161,8 +167,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            coinManager.coinCounter++;
+            coinCount = coinCount + 5;
+            //coinCount = coinManager.coinCounter;
             Destroy(other.gameObject);
         }
     }
+
 }

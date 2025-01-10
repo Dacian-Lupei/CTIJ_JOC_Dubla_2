@@ -8,7 +8,8 @@ public class Void : MonoBehaviour
     public GameObject player;
     public Transform RespawnPoint;
     public GameObject enemy;
-    public int SceneReset;
+    public int SceneReset = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class Void : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //player.transform.position = RespawnPoint.position;
-            SceneManager.LoadScene(SceneReset);
+            SceneManager.LoadScene("MainScene");
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
