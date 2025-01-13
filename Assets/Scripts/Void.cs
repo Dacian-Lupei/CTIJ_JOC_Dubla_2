@@ -27,7 +27,7 @@ public class Void : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //player.transform.position = RespawnPoint.position;
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("LVL_1");
         }
         if (other.gameObject.CompareTag("Enemy"))
         {

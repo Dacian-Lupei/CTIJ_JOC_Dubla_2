@@ -11,7 +11,15 @@ public class ShopManagerScript : MonoBehaviour
     public int[,] shopItems = new int[5,5];
     public TMP_Text CoinText;
     public GameObject player;
-    public int coinC; 
+    public int coinC;
+
+    public void SetPlayer(GameObject playerObject)
+    {
+        player = playerObject;
+        Debug.Log("CoinManager assigned to player: " + player.name);
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -13,6 +13,7 @@ public class CharacterManager : MonoBehaviour
     public SpriteRenderer artworkSprite;
 
     public static int selectedOption = 0;
+    public GameObject[] characterPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,7 @@ public class CharacterManager : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene("MainScene");
+
+        SceneManager.LoadScene("LVL_1");
     }
 }

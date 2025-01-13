@@ -1674,6 +1674,9 @@ MonoBehaviour:
   characterDB: {fileID: 11400000, guid: ad65b7e6204dd28448d00bb1c66e3fb7, type: 2}
   nameText: {fileID: 263322117}
   artworkSprite: {fileID: 1481086410}
+  characterPrefabs:
+  - {fileID: 6975202492011268349, guid: fc5cdd799350f114fad8f6f514f1bdbd, type: 3}
+  - {fileID: 5703301355707130865, guid: 129049a20b11b914f907714255a50f95, type: 3}
 --- !u!1 &1563330045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,7 +2101,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1481086412}
         m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -943,13 +943,13 @@ AnimatorStateMachine:
     - {fileID: 6148946714488676786}
     - {fileID: 5090650228890598803}
     - {fileID: 4977471505328558524}
+  - first: {fileID: 4347974983431817038}
+    second:
+    - {fileID: 6417005413960189032}
   - first: {fileID: -1540576299486371852}
     second:
     - {fileID: -7698833271041575769}
     - {fileID: 4948069249527570646}
-  - first: {fileID: 4347974983431817038}
-    second:
-    - {fileID: 6417005413960189032}
   - first: {fileID: 151043681892059031}
     second:
     - {fileID: 3401304368949722356}

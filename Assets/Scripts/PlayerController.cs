@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     Damageable damageable;
     Rigidbody2D rb;
     Animator animator;
-    
+
+    public AudioClip coinSound;
     public float CurrentMoveSpeed
     {
         get
@@ -66,10 +67,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        //if (CharacterManager.selectedOption == 0)
-        //{
-        //    gameObject.SetActive(false);
-        //}
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
@@ -155,6 +152,7 @@ public class PlayerController : MonoBehaviour
         if(context.started)
         {
             animator.SetTrigger(AnimationStrings.attackTrigger);
+            //Debug.Log("cox");
         }
     }
 
@@ -168,6 +166,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             coinCount = coinCount + 5;
+            GetComponent<AudioSource>().PlayOneShot(coinSound);
             //coinCount = coinManager.coinCounter;
             Destroy(other.gameObject);
         }
